@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Quest - NOVA SBE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <img src="assets/logo.png" alt="NOVA SBE Logo" class="logo">
+        <h1>Campus Quest</h1>
+
+        <div id="start-screen">
+            <input type="text" id="name-input" placeholder="Enter your name" />
+            <button onclick="startGame()">Start Game</button>
+            <button onclick="showLeaderboard()">View Leaderboard</button>
+
+            <div class="info">
+                <h3>💡 How It Works:</h3>
+                <ul style="text-align:left;">
+                    <li>🔍 Answer 12 clues about NOVA SBE</li>
+                    <li>🎯 Each correct answer gives 1 point</li>
+                    <li>💡 Use hints (cost 1 point)</li>
+                    <li>⏱ Finish as fast as you can!</li>
+                </ul>
+            </div>
+
+            <div class="links">
+                <h3>🔗 Useful Links:</h3>
+                <ul>
+                    <li><a href="https://www2.novasbe.unl.pt" target="_blank">NOVA SBE Website</a></li>
+                    <li><a href="https://campustour.novasbe.pt" target="_blank">Campus Tour</a></li>
+                    <li><a href="https://portal.novasbe.pt/" target="_blank">Student Portal</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="game" style="display:none;">
+            <p id="clue-text">Loading clue...</p>
+            <input type="text" id="answer-input" placeholder="Your answer here">
+            <button onclick="submitAnswer()">Submit</button>
+            <button onclick="showHint()">Show Hint (-1 point)</button>
+            <div id="progress"></div>
+            <div id="timer"></div>
+            <button onclick="toggleMap()">View Campus Map</button>
+        </div>
+
+        <div id="map-container" style="display:none;">
+            <iframe src="https://campustour.novasbe.pt/" width="100%" height="500" style="border:0; margin-top: 10px;" title="NOVA Campus Tour"></iframe>
+        </div>
+
+        <div id="result" style="display:none;"></div>
+    </div>
+
+    
+    <script src="script.js"></script>
+</body>
+</html>
